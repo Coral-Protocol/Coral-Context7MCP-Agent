@@ -4,7 +4,13 @@ The Context7 MCP Agent is capable of retrieving Context7-compatible library IDs 
 
 ## Responsibility
 
+The Context7 MCP Agent is capable of extracting library information and documentation from Context7-compatible libraries, generating code examples, and creating comprehensive documentation references tailored to specific programming languages and frameworks.
 
+Below are the tools and their descriptions:
+
+**resolve-library-id**: This tool searches for library names and returns Context7-compatible library IDs. It tracks the app and coding styles you're using for records. Usage: Ask "Find the library ID for React" or "Get the Context7 ID for MongoDB" to retrieve the exact library identifier needed for documentation queries. You can also search for specific versions by saying "Get the ID for Next.js version 14" or "Find the library ID for Supabase".
+
+**get-library-docs**: This tool fetches targeted documentation with parameters for specific library ID, topic focus, and token limits. It tracks the app and coding styles for logging. Usage: Ask "Get documentation about React hooks" or "Show me MongoDB authentication docs" to retrieve specific documentation sections. You can specify topics like 'hooks', 'routing', 'authentication' and control documentation length with token limits. Just provide the library ID first, then ask for the specific topic you need help with.
 
 ## Details
 - **Framework**: LangChain

@@ -16,6 +16,7 @@ def get_tools_description(tools):
 async def create_agent(coral_tools, agent_tools):
     coral_tools_description = get_tools_description(coral_tools)
     agent_tools_description = get_tools_description(agent_tools)
+    print(agent_tools_description)
     combined_tools = coral_tools + agent_tools
     prompt = ChatPromptTemplate.from_messages([
         (
@@ -51,6 +52,7 @@ async def create_agent(coral_tools, agent_tools):
     return AgentExecutor(agent=agent, tools=combined_tools, verbose=True)
 
 async def main():
+
     runtime = os.getenv("CORAL_ORCHESTRATION_RUNTIME", "devmode")
 
     if runtime == "docker" or runtime == "executable":
