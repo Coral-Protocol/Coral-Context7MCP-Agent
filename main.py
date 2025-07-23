@@ -79,7 +79,7 @@ async def main():
 				"timeout": 300,
 				"sse_read_timeout": 300
 			},
-			"context7_mcp": {"type": 'stdio', "command": 'npx', "args": ['-y', '@upstash/context7-mcp']}
+			"context7_mcp": {"transport": 'stdio', "command": 'npx', "args": ['-y', '@upstash/context7-mcp']}
 		}
     )
 

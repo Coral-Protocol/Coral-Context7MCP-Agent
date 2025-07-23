@@ -25,10 +25,10 @@ Ensure that the [Coral Server](https://github.com/Coral-Protocol/coral-server) i
 
 ```bash
 # In a new terminal clone the repository:
-git clone https://github.com/Coral-Protocol/Coral-GithubMCP-Agent.git
+git clone https://github.com/Coral-Protocol/Coral-Context7MCP-Agent.git
 
 # Navigate to the project directory:
-cd Coral-GithubMCP-Agent
+cd Coral-Context7MCP-Agent
 
 # Download and run the UV installer, setting the installation directory to the current one
 curl -LsSf https://astral.sh/uv/install.sh | env UV_INSTALL_DIR=$(pwd) sh
@@ -53,8 +53,7 @@ uv sync
 <details>
 
 Get the API Key:
-[OpenAI](https://platform.openai.com/api-keys) || 
-[Github Token](https://github.com/settings/tokens)
+[OpenAI](https://platform.openai.com/api-keys)
 
 ```bash
 # Create .env file in project root
@@ -70,7 +69,7 @@ Check if the .env file has correct URL for Coral Server and adjust the parameter
 You can run in either of the below modes to get your system running.  
 
 - The Executable Model is part of the Coral Protocol Orchestrator which works with [Coral Studio UI](https://github.com/Coral-Protocol/coral-studio).  
-- The Dev Mode allows the Coral Server and all agents to be seperately running on each terminal without UI support.  
+- The Dev Mode allows the Coral Server and all agents to be separately running on each terminal without UI support.  
 
 ### 1. Executable Mode
 
@@ -93,22 +92,17 @@ applications:
       - "priv"
 
 registry:
-  githubmcp_agent:
+  context7_mcp_agent:
     options:
-       - name: "API_KEY"
+      - name: "API_KEY"
         type: "string"
         description: "API key for the service"
-      - name: "GITHUB_PERSONAL_ACCESS_TOKEN"
-        type: "string"
-        description: "Github token for the service"
     runtime:
       type: "executable"
       command: ["bash", "-c", "${PROJECT_DIR}/run_agent.sh main.py"]
       environment:
         - name: "API_KEY"
           from: "API_KEY"
-        - name: "GITHUB_PERSONAL_ACCESS_TOKEN"
-          from: "GITHUB_PERSONAL_ACCESS_TOKEN"
         - name: "MODEL_NAME"
           value: "gpt-4.1"
         - name: "MODEL_PROVIDER"
@@ -149,10 +143,10 @@ You can view the agents running in Dev Mode using the [Coral Studio UI](https://
 
 ```bash
 # Input:
-GitHub MCP instruction
+Context7 MCP instruction
 
-#Output:
-The desired output from the Github MCP execution
+# Output:
+The desired output from the Context7 MCP execution
 ```
 
 </details>
