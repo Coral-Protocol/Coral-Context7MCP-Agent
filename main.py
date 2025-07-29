@@ -29,10 +29,11 @@ async def create_agent(coral_tools, agent_tools):
             4. Check the tool schema and make a plan in steps for the task you want to perform.
             5. Only call the tools you need to perform for each step of the plan to complete the instruction in the content.
             6. Take 3 seconds and think about the content and see if you have executed the instruction to the best of your ability and the tools. Make this your response as "answer".
-            7. Use `send_message` from coral tools to send a message in the same thread ID to the sender Id you received the mention from, with content: "answer".
-            8. If any error occurs, use `send_message` to send a message in the same thread ID to the sender Id you received the mention from, with content: "error".
-            9. Always respond back to the sender agent even if you have no answer or error.
-            9. Wait for 2 seconds and repeat the process from step 1.
+            7. Provide reference of source of the answer in the format of "source: <source_name> <source_url>".
+            8. Use `send_message` from coral tools to send a message in the same thread ID to the sender Id you received the mention from, with content: final response.
+            9. If any error occurs, use `send_message` to send a message in the same thread ID to the sender Id you received the mention from, with content: "error".
+            10. Always respond back to the sender agent even if you have no answer or error.
+            11. Wait for 2 seconds and repeat the process from step 1.
 
             These are the list of coral tools: {coral_tools_description}
             These are the list of your tools: {agent_tools_description}"""
