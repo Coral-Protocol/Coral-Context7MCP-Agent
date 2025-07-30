@@ -51,7 +51,7 @@ async def create_agent(coral_tools, agent_tools):
         base_url=os.getenv("MODEL_BASE_URL") if os.getenv("MODEL_BASE_URL") else None
         )
     agent = create_tool_calling_agent(model, combined_tools, prompt)
-    return AgentExecutor(agent=agent, tools=combined_tools, verbose=True)
+    return AgentExecutor(agent=agent, tools=combined_tools, verbose=True, handle_parsing_errors=True)
 
 async def main():
 
